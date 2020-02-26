@@ -5,19 +5,19 @@ class DishDetail extends Component {
     
 
     renderComments(dish) {
-        let comments = dish.comments;
+        const comments = dish.comments;
         if (comments != null){
-            let comms = comments.map((comm, i) => {
-                let date = new Intl.DateTimeFormat('en-US', {
+            const comms = comments.map((comment, i) => {
+                const date = new Intl.DateTimeFormat('en-US', {
                     year:'numeric',
                     month: 'short',
                     day: '2-digit'
-                }).format(new Date(Date.parse(comm.date)))
+                }).format(new Date(Date.parse(comment.date)))
                 
                 return (
-                        <ul key={comm.id} className="list-unstyled">
-                            <li className="comment">{comm.comment}</li>
-                            <li className="author">-- {comm.author}, {date}</li>
+                        <ul key={comment.id} className="list-unstyled">
+                            <li className="comment">{comment.comment}</li>
+                            <li className="author">-- {comment.author}, {date}</li>
                         </ul>
                     );
                 })

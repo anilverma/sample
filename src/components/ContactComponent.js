@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Row,  Label, Input, Col, Breadcrumb, BreadcrumbItem, FormFeedback } from 'reactstrap';
+import { Button, Row,  Label, Col, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Control, LocalForm, Errors} from 'react-redux-form';
 
 const required = (val) => val && val.length;
@@ -152,6 +152,25 @@ class Contact extends Component {
                                             validEmail: 'Invalid Email Address'
                                         }}
                                      />
+                                </Col>
+                            </Row>
+                            <Row className="form-group">
+                                <Col md={{size: 6, offset: 2}}>
+                                    <div className="form-check">
+                                        <Label check>
+                                            <Control.checkbox model=".agree" name="agree"
+                                                className="form-check-input"
+                                                 /> {' '}
+                                                <strong>May we contact you?</strong>
+                                        </Label>
+                                    </div>
+                                </Col>
+                                <Col md={{size: 3, offset: 1}}>
+                                    <Control.select model=".contactType" name="contactType"
+                                        className="form-control">
+                                        <option>Tel.</option>
+                                        <option>Email</option>
+                                    </Control.select>
                                 </Col>
                             </Row>
                             <Row className="form-group">

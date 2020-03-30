@@ -28,12 +28,10 @@ class Header extends Component {
         });
     }
 
-    handleLogin(event) {
+    handleLogin(values) {
         this.toggleModal();
-        alert("Username:" + this.username.value + " Password:"+ this.password.value
-        + " Remember: " + this.remember.value);
-        
-        event.preventDefault();
+        console.log("Current state is: " + JSON.stringify(values));
+        alert("Current state is: " + JSON.stringify(values));
     }
 
     render() {

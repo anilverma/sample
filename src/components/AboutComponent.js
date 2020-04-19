@@ -25,7 +25,6 @@ function RenderLeader({ leader }) {
 }
 
 
-
 function About(props) {
     if (props.isLoading) {
         return (
